@@ -1,20 +1,29 @@
+#include <HttpClient.h>
+#include <b64.h>
 # include <SoftwareSerial.h>
 
-SoftwareSerial Serial_wifi(2,3);
+HttpClient http;
+SoftwareSerial esp(2,3);
+
+String SSID = "dlink-6A94";
+String PASSWORD = "xhfuq65281";
 
 void setup(){
   Serial.begin(9600);
-  Serial_wifi.begin(9600);
-  Serial_wifi.setTimeout(5000);
+  esp.begin(9600);
+  esp.setTimeout(5000);
 
+  esp.println("AT+CWMODE=1");
+  // AT+CWJAP="dlink-6A94","xhfuq65281"
 
+  
 }
 
 void loop(){
   if(Serial.available()){
-    Serial_wifi.write(Serial.read());
+    esp.write(Serial.read());
   }
-    if(Serial_wifi.available()){
-    Serial.write(Serial_wifi.read());
+    if(esp.available()){
+    Serial.write(esp.read());
   }
 }
