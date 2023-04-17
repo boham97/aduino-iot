@@ -1,8 +1,8 @@
-#include <HttpClient.h>
-#include <b64.h>
-# include <SoftwareSerial.h>
+#include <Arduino.h>
+#include <ArduinoJson.h>
+#include <SoftwareSerial.h>
 
-HttpClient http;
+
 SoftwareSerial esp(2,3);
 
 String SSID = "dlink-6A94";
