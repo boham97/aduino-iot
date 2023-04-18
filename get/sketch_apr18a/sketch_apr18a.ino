@@ -2,9 +2,9 @@
 
 //https://makejoa.tistory.com/32
 
-#define ssid "ssid"
+#define ssid "dlink-6A94"
 
-#define password "password"
+#define password "xhfuq65281"
 
 
 
@@ -106,11 +106,11 @@ void connectWifi()
 
 void requestBusInfo(){
 
-  cmdSize = strlen("GET /ws/rest/busarrivalservice?serviceKey=1234567890&routeId=207000004&stationId=207000125 HTTP/1.1")
+  cmdSize = strlen("GET /api/74588f2cba914dc7b943/COOKRCP01/json/1/100/ HTTP/1.1")
 
-              + strlen("Host:openapi.gbis.go.kr\r\n\r\n") + 2;
+              + strlen("Host:openapi.foodsafetykorea.go.kr\r\n\r\n") + 2;
 
-  espSerial.println("AT+CIPSTART=\"TCP\",\"openapi.gbis.go.kr\",80");
+  espSerial.println("AT+CIPSTART=\"TCP\",\"openapi.foodsafetykorea.go.kr\",80");
 
   delay(500);
 
@@ -122,8 +122,8 @@ void requestBusInfo(){
 
   delay(100);
 
-  espSerial.println("GET /ws/rest/busarrivalservice?serviceKey=1234567890&routeId=207000004&stationId=207000125 HTTP/1.1");
+  espSerial.println("GET /api/74588f2cba914dc7b943/COOKRCP01/json/1/2/ HTTP/1.1");
 
-  espSerial.println("Host:openapi.gbis.go.kr\r\n\r\n");
+  espSerial.println("Host:openapi.foodsafetykorea.go.kr\r\n\r\n");
 
 } 
